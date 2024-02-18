@@ -12,10 +12,6 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <div class="weather-app">
@@ -49,24 +45,7 @@
           </div>
         </div>
 
-        <div class="weather-forecast">
-          <div class="row">
-            <div class="col-2">
-              <div class="weather-forecast-date">Thu</div>
-
-              <img
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png"
-                alt="weather-icon"
-                width="50"
-              />
-
-              <div class="weather-forecast-temperatures">
-                <span class="max-temperature">18°</span>
-                <span class="min-temperature">12°</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="weather-forecast" id="forecast"></div>
       </main>
 
       <footer>

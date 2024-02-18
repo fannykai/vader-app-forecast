@@ -75,3 +75,35 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Stockholm");
+
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      ` <div class="row">
+            <div class="col-2">
+              <div class="weather-forecast-date">${day}</div>
+
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png"
+                alt="weather-icon"
+                width="50"
+              />
+
+              <div class="weather-forecast-temperatures">
+                <span class="max-temperature">18°</span>
+                <span class="min-temperature">12°</span>
+              </div>
+            </div>
+          </div>`;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();
