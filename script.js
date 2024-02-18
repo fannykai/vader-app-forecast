@@ -30,6 +30,8 @@ function refreshWeather(response) {
 
   //här tar avrundar jag temperaturen
   temperatureElement.innerHTML = Math.round(temperature);
+
+  getForecast(response.data.city);
 }
 
 // det här är en funktion som jag om datumet till männsklig version.
@@ -76,7 +78,14 @@ searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Stockholm");
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "f05305048t7o8a4bff3e9ed36524a3e5";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
@@ -106,4 +115,3 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHtml;
 }
 
-displayForecast();
